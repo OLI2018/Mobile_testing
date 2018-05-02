@@ -6,14 +6,15 @@ Feature: User is able to convert area units
     Given I land on help popup
     When I click on Got it button
     Then I land on Area screen
-
+  @wip
   Scenario: User is able to swap values
     Given I click on Got it button
     And I see "Sq Kilometre" in From header
-    And I see "Sq Meter" in To header
+    And I see "Sq Metre" in To header
     When I click on Swap button
-    Then I see "Sq Meter" in From header
-    And I see "Sq Kilometer" in To header
+    Then I see "Sq Metre" in From header
+    And I see "Sq Kilometre" in To header
+
 
   Scenario Outline: User is able to convert default units
     Given I click on Got it button
