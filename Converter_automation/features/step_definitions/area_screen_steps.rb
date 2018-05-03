@@ -51,6 +51,9 @@ When(/^I click on From field$/) do
 end
 
 And(/^I press "([^"]*)" on soft keyboard$/) do |value|
-  digit = Integer(value)
+  digits = value.split("")
+  digits.each do |key|
+    digit = Integer(key)
   press_keycode 7 + digit
+    end
 end
