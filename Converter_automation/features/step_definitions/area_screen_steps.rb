@@ -1,5 +1,10 @@
-Given(/^I land on help popup$/) do
-  text("Help")
+Given(/^I land on "([^"]*)" popup$/) do |value|
+  actual_value = find_element(id: "alertTitle").text
+  # puts("Expected value is #{value}")
+  # puts("Actual value is #{actual_value}")
+  if actual_value != value
+    fail("Expected value is #{value}, but actual value was #{actual_value}")
+  end
 end
 
 When(/^I click on Got it button$/) do
@@ -19,10 +24,9 @@ Then(/^I see "([^"]*)" in From header$/) do |value|
   actual_value = find_element(id: "header_text_unit_from").text
   # puts("Expected value is #{value}")
   # puts("Actual value is #{actual_value}")
-    if actual_value != value
-      fail("Expected valus is #{value}, but actual value was #{actual_value}")
-    end
-
+  if actual_value != value
+    fail("Expected value is #{value}, but actual value was #{actual_value}")
+  end
 end
 
 And(/^I see "([^"]*)" in To header$/) do |value|
@@ -30,8 +34,9 @@ And(/^I see "([^"]*)" in To header$/) do |value|
   # puts("Expected value is #{value}")
   # puts("Actual value is #{actual_value}")
   if actual_value != value
-    fail("Expected valus is #{value}, but actual value was #{actual_value}")
+    fail("Expected value is #{value}, but actual value was #{actual_value}")
   end
+
 end
 
 And(/^I click on Clear button$/) do
@@ -47,7 +52,7 @@ end
 Then(/^I get "([^"]*)" in To field$/) do |value|
   actual_value = find_element(id: "header_value_to").text
   if actual_value != value
-    fail("Expected valus is #{value}, but actual value was #{actual_value}")
+    fail("Expected value is #{value}, but actual value was #{actual_value}")
   end
 
 end
@@ -60,8 +65,8 @@ And(/^I press "([^"]*)" on soft keyboard$/) do |value|
   digits = value.split("")
   digits.each do |key|
     digit = Integer(key)
-  press_keycode 7 + digit
-    end
+    press_keycode 7 + digit
+  end
 end
 
 When(/^I select "([^"]*)" from left column$/) do |value|
