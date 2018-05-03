@@ -2,10 +2,10 @@
 Feature: User is able to convert area units
 
   Background:
-#    Given I click on Got it button
-#    And I land on Area screen
+    Given I click on Got it button
+    And I land on Area screen
 
-  @wip
+
   Scenario: User is able to dismiss help
     Given I land on "Help" popup
     When I click on Got it button
