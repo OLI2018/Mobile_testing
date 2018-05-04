@@ -9,7 +9,7 @@ Feature: User is able to convert Volume units
     Then I see app menu
 
   @wip
-  Scenario:
+  Scenario Outline:
     When I swipe in the menu
     And I select "<target>" from menu
     Then I land on "<result>" screen
