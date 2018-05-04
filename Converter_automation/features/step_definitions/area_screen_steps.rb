@@ -51,6 +51,7 @@ end
 
 Then(/^I get "([^"]*)" in To field$/) do |value|
   actual_value = find_element(id: "header_value_to").text
+  puts("Actual value in To field: " + actual_value)
   if actual_value != value
     fail("Expected value is #{value}, but actual value was #{actual_value}")
   end
