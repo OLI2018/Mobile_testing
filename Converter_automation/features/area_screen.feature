@@ -1,4 +1,4 @@
-@area
+#@area
 Feature: User is able to convert area units
 
   Background:
@@ -11,7 +11,7 @@ Feature: User is able to convert area units
 #    When I click on Got it button
 #    Then I land on Area screen
 
-@wip
+#@wip
   Scenario: User is able to swap values
     Given I see "Sq Kilometre" in From header
     And I see "Sq Kilometre" in To header
