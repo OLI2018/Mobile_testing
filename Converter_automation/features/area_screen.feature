@@ -11,7 +11,6 @@ Feature: User is able to convert area units
 #    When I click on Got it button
 #    Then I land on Area screen
 
-
   Scenario: User is able to swap values
     Given I see "Sq Kilometre" in From header
     And I see "Sq Metre" in To header
@@ -41,6 +40,17 @@ Feature: User is able to convert area units
     When I select "Hectare" from left column
     Then I see "Hectare" in From header
     And I get "10000" in To field
+
+  Scenario Outline:
+    When I see app Area menu
+    Then I select "<target>" from To column
+    And I get "<result>" in To field
+
+    Examples:
+      | target        | result      |
+      | Sq Kilometre  | 1           |
+      | Sq Metre      | 1000000     |
+      | Sq Centimetre | 10000000000 |
 
 
 
